@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-public class DBConnection extends Properties
+public class DBConnection 
 {
 	private final static String JDCB_DRIVER = "com.mysql.cj.jdbc.Driver";
 	private final static String DB_URL = "jdbc:mysql://14.38.252.76/account?characterEncoding=UTF-8&serverTimezone=UTC";//mysql¿« ¡÷º“

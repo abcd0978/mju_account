@@ -7,7 +7,62 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainController">
    <children>
-      <Label layoutX="165.0" layoutY="111.0" prefHeight="34.0" prefWidth="92.0" text="Hello" />
-      <Label fx:id="name" layoutX="268.0" layoutY="119.0" prefHeight="19.0" prefWidth="153.0" />
+      <Label layoutX="912.0" layoutY="52.0" prefHeight="34.0" prefWidth="92.0" text="Hello" />
+      <Label fx:id="name" layoutX="952.0" layoutY="60.0" prefHeight="19.0" prefWidth="153.0" />
+      <Button fx:id="accountButton" layoutX="1140.0" layoutY="54.0" mnemonicParsing="false" text="account" />
+      <GridPane fx:id="CalendarGrid" gridLinesVisible="true" layoutY="110.0" prefHeight="790.0" prefWidth="923.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="sun" />
+            <Label text="mon" GridPane.columnIndex="1" />
+            <Label text="tue" GridPane.columnIndex="2" />
+            <Label text="wed" GridPane.columnIndex="3" />
+            <Label text="tur" GridPane.columnIndex="4" />
+            <Label text="fri" GridPane.columnIndex="5" />
+            <Label text="sat" GridPane.columnIndex="6" />
+         </children>
+      </GridPane>
+      <HBox layoutX="6.0" layoutY="79.0" prefHeight="34.0" prefWidth="236.0" spacing="50.0">
+         <children>
+            <Button fx:id="prev" mnemonicParsing="false" text="prev" />
+            <Button fx:id="next" mnemonicParsing="false" text="next" />
+         </children>
+      </HBox>
+      <HBox layoutX="348.0" layoutY="91.0" prefHeight="19.0" prefWidth="322.0" spacing="30.0">
+         <children>
+            <Label fx:id="year_cal" text="Label" />
+            <Label text="년" />
+            <Label fx:id="month_cal" text="Label" />
+            <Label text="월" />
+         </children>
+      </HBox>
+      <HBox layoutX="912.0" layoutY="33.0" prefHeight="19.0" prefWidth="260.0">
+         <children>
+            <Label text="current: " />
+            <Label fx:id="year_cur" text="Label" />
+            <Label text="년 " />
+            <Label fx:id="month_cur" text="Label" />
+            <Label text="월 " />
+            <Label fx:id="date_cur" text="Label" />
+            <Label text="일" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
