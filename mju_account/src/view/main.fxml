@@ -9,7 +9,7 @@
    <children>
       <Label layoutX="912.0" layoutY="52.0" prefHeight="34.0" prefWidth="92.0" text="Hello" />
       <Label fx:id="name" layoutX="952.0" layoutY="60.0" prefHeight="19.0" prefWidth="153.0" />
-      <Button fx:id="accountButton" layoutX="1140.0" layoutY="54.0" mnemonicParsing="false" text="account" />
+      <Button fx:id="accountButton" layoutX="1228.0" layoutY="256.0" mnemonicParsing="false" text="account" />
       <GridPane fx:id="CalendarGrid" gridLinesVisible="true" layoutY="110.0" prefHeight="790.0" prefWidth="923.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,5 +64,8 @@
             <Label text="일" />
          </children>
       </HBox>
+      <Button fx:id="fixedButton" layoutX="1002.0" layoutY="256.0" mnemonicParsing="false" text="fixed income and expend" />
+      <Button fx:id="pattButton" layoutX="1002.0" layoutY="307.0" mnemonicParsing="false" text="spending patterns" />
+      <Button fx:id="infoButton" layoutX="1194.0" layoutY="307.0" mnemonicParsing="false" text="infos" />
    </children>
 </AnchorPane>

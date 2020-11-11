@@ -28,10 +28,18 @@ public class mainController implements Initializable
 	@FXML Label year_cur;//현재의 연
 	@FXML Label month_cur;//현재의 월
 	@FXML Label date_cur;//현재의 일
-	@FXML Button accountButton;
+	
+	/*팝업들*/
+	@FXML Button accountButton;//오늘의 수입,지출버튼
+	@FXML Button fixedButton;//고정수입 지출버튼
+	@FXML Button pattButton;//소비패턴 버튼
+	@FXML Button infoButton;//정보 버튼
+	
+	/*달력에 관한 것들*/
 	@FXML Button prev;
 	@FXML Button next;
 	@FXML GridPane CalendarGrid;//달력의 틀
+	
 	private popup accountPopup;//가계부 기록 팝업
 	private Calendar calendar;//현재 날짜를 불러오기위한 용도.
 	private user_info ui = null; //사용자의 정보를 가저오는 객체
@@ -49,7 +57,13 @@ public class mainController implements Initializable
 		System.out.println(ui.getId()+"번 사용자 접속");//디버그메세지 *무시*
 		name.setText(ui.getName());//이름받아오기
 		calendar = Calendar.getInstance();//달력객체의 인스턴스를 받아옴
+		
+		/*팝업들*/
 		accountButton.setOnAction(event->account());
+		fixedButton.setOnAction(event->fixed());
+		pattButton.setOnAction(event->pattern());
+		infoButton.setOnAction(event->info());
+		
 		prev.setOnAction(event->decrease_date());
 		next.setOnAction(event->increase_date());
 		year = calendar.get(Calendar.YEAR);//연
@@ -168,5 +182,25 @@ public class mainController implements Initializable
 		accountPopup.setLocation("/view/accountPopup.fxml");
 		accountPopup.show();
 	}
-	
+	public void fixed()
+	{
+		System.out.println("fixed income and expend");
+		accountPopup = new popup("fixed income and expend");
+		accountPopup.setLocation("/view/fixedincomePopup.fxml");
+		accountPopup.show();
+	}
+	public void pattern()
+	{
+		System.out.println("spending pattern");
+		accountPopup = new popup("spending pattern");
+		accountPopup.setLocation("/view/patternPopup.fxml");
+		accountPopup.show();
+	}
+	public void info()
+	{
+		System.out.println("financial infos");
+		accountPopup = new popup("financial infos");
+		accountPopup.setLocation("/view/infoPopup.fxml");
+		accountPopup.show();
+	}
 }
