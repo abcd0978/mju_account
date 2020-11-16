@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 
+import database.Account;
 import database.user_account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -74,5 +75,4 @@ public class accountPopupController implements Initializable
 			e.printStackTrace();
 		}
 	}
-	
 }

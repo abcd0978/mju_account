@@ -38,6 +38,7 @@ public class mainController implements Initializable
 	/*달력에 관한 것들*/
 	@FXML Button prev;
 	@FXML Button next;
+	@FXML Button refresh;
 	@FXML GridPane CalendarGrid;//달력의 틀
 	
 	private popup accountPopup;//가계부 기록 팝업
@@ -66,6 +67,7 @@ public class mainController implements Initializable
 		
 		prev.setOnAction(event->decrease_date());
 		next.setOnAction(event->increase_date());
+		refresh.setOnAction(event->refreshAction());
 		year = calendar.get(Calendar.YEAR);//연
 		month = calendar.get(Calendar.MONTH)+1;//월
 		date = calendar.get(Calendar.DATE);//일
@@ -79,6 +81,10 @@ public class mainController implements Initializable
 		System.out.println("현재 날짜:"+year+"년 "+month+"월");
 		calendarinit(this.year,this.month);
 		calendar_date_init(this.year, this.month);
+	}
+	private Object refreshAction() 
+	{
+		return null;
 	}
 	public void init_date(int year,int month)//달력 위에뜨는 날짜를 보여준다.
 	{
@@ -161,7 +167,8 @@ public class mainController implements Initializable
 		int j = 0;
 		int lastday = Calin.leap_date(year, month);//마지막날  ex. (2019,2) -> 28
 		System.out.println("lastday: "+lastday);
-		for (calendarController date : day) {
+		for (calendarController date : day) 
+		{
 			System.out.println(j);
 			j++;
 		}
@@ -171,6 +178,8 @@ public class mainController implements Initializable
 				break;
 			date.setDate_Cal(i);//인덱스넘버 i는 1씩늘어나기때문에 해당 달의 마지막날 까지 일(日)을 써넣을수있다.
 			date.setdate(year, month);//날짜객체는 일(日)뿐만 아니라 월일 도 필요하다. 달력에 직접 표시하지는 않지만 멤버로 가지고 있어야한다.
+			if(year==this.year && month==this.month && i == this.date )
+				date.setToday();
 			i++;
 		}
 		System.out.println(i);
