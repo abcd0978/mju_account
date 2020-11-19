@@ -10,18 +10,28 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import popupcontrollers.popup;
 
 public class calendarController 
 {
 	@FXML Label date_Cal;
 	@FXML Label income;
 	@FXML Label expend;
+	@FXML AnchorPane Anchor;
 	private int year,month,date;
+	private popup detailPopup;
 	private user_account ua;
 	public void setDate_Cal(int date)
 	{
 		date_Cal.setText(Integer.toString(date));
+		Anchor.setOnMouseClicked(event->detail());
 		ua = new user_account();
+	}
+	private void detail() 
+	{
+		detailPopup = new popup("상세");
+		detailPopup.setLocation("../view/detailPopup.fxml");
+		detailPopup.show();
 	}
 	public void setinex() throws SQLException
 	{

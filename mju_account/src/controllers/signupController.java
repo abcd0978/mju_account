@@ -1,15 +1,20 @@
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import database.user_info;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class signupController implements Initializable
 {
@@ -27,7 +32,14 @@ public class signupController implements Initializable
 	public void initialize(URL location, ResourceBundle resources) 
 	{
 		ui = new user_info();
-		signup.setOnAction(event->register());	
+		signup.setOnAction(event->register());
+		goback.setOnAction(event->{
+			try {
+				goBack();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
 	}
 	public void register()
 	{
@@ -42,6 +54,13 @@ public class signupController implements Initializable
 		{
 			e.printStackTrace();
 		}
+	}
+	public void goBack() throws IOException
+	{
+		Parent login = FXMLLoader.load(getClass().getResource("../view/root.fxml"));
+		Scene scene = new Scene(login);
+		Stage primaryStage = (Stage)goback.getScene().getWindow();
+		primaryStage.setScene(scene);
 	}
 	
 }

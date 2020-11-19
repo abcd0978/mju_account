@@ -38,7 +38,7 @@ public class accountPopupController implements Initializable
 	private Calendar cal;
 	public void initialize(URL location, ResourceBundle resources) 
 	{
-		listItems = FXCollections.observableArrayList("식비","교통","문화생활","마트/편의점","교육","페션/미용","기타","일당","용돈");
+		listItems = FXCollections.observableArrayList("식비","교통","문화생활","마트/편의점","교육","페션/미용","기타","일당","용돈","알바");
 		category.setItems(listItems);
 		cal = Calendar.getInstance();
 		ua = new user_account();

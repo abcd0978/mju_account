@@ -82,9 +82,10 @@ public class mainController implements Initializable
 		calendarinit(this.year,this.month);
 		calendar_date_init(this.year, this.month);
 	}
-	private Object refreshAction() 
+	private void refreshAction() 
 	{
-		return null;
+		calendarinit(this._year,this._month);
+		calendar_date_init(this._year,this._month);
 	}
 	public void init_date(int year,int month)//달력 위에뜨는 날짜를 보여준다.
 	{
@@ -182,33 +183,32 @@ public class mainController implements Initializable
 				date.setToday();
 			i++;
 		}
-		System.out.println(i);
 	}
 	public void account() 
 	{
 		System.out.println("account");
-		accountPopup = new popup("account");
+		accountPopup = new popup("하루 수입 지출 입력");
 		accountPopup.setLocation("/view/accountPopup.fxml");
 		accountPopup.show();
 	}
 	public void fixed()
 	{
 		System.out.println("fixed income and expend");
-		accountPopup = new popup("fixed income and expend");
+		accountPopup = new popup("고정 수입 및 지출 입력");
 		accountPopup.setLocation("/view/fixedincomePopup.fxml");
 		accountPopup.show();
 	}
 	public void pattern()
 	{
-		System.out.println("spending pattern");
-		accountPopup = new popup("spending pattern");
+		System.out.println("소비 패턴");
+		accountPopup = new popup("소비 패턴");
 		accountPopup.setLocation("/view/patternPopup.fxml");
 		accountPopup.show();
 	}
 	public void info()
 	{
 		System.out.println("financial infos");
-		accountPopup = new popup("financial infos");
+		accountPopup = new popup("금융정보");
 		accountPopup.setLocation("/view/infoPopup.fxml");
 		accountPopup.show();
 	}

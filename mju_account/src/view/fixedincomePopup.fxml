@@ -1,8 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupcontrollers.fixedincomePopupController" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupcontrollers.fixedincomePopupController">
+   <children>
+      <Label layoutX="472.0" layoutY="57.0" text="고정 수입 및 지출 변경" />
+      <HBox layoutX="168.0" layoutY="313.0" prefHeight="165.0" prefWidth="795.0" spacing="170.0">
+         <children>
+            <HBox prefHeight="262.0" prefWidth="303.0">
+               <children>
+                  <VBox prefHeight="189.0" prefWidth="55.0" spacing="15.0">
+                     <children>
+                        <Label text="시작일" />
+                        <Label text="단위" />
+                        <Label text="분류" />
+                        <Label text="금액" />
+                        <Label text="내용" />
+                        <Label text="기간" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="247.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="2020년" />
+                              <TextField fx:id="start_month_income" prefHeight="29.0" prefWidth="38.0" />
+                              <Label text="월" />
+                              <TextField fx:id="start_date_income" prefHeight="29.0" prefWidth="37.0" />
+                              <Label text="일" />
+                              <CheckBox fx:id="today_check_income" mnemonicParsing="false" text="오늘부터" />
+                           </children>
+                        </HBox>
+                        <ChoiceBox fx:id="income_date" prefHeight="29.0" prefWidth="265.0" />
+                        <ChoiceBox fx:id="income_category" prefHeight="29.0" prefWidth="265.0" />
+                        <TextField fx:id="income_money" />
+                        <TextField fx:id="income_title" />
+                        <TextField fx:id="how_long_income" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="199.0" prefWidth="322.0">
+               <children>
+                  <VBox prefHeight="199.0" prefWidth="58.0" spacing="15.0">
+                     <children>
+                        <Label text="시작일" />
+                        <Label text="단위" />
+                        <Label text="분류" />
+                        <Label text="금액" />
+                        <Label text="내용" />
+                        <Label text="기간" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="259.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="29.0" prefWidth="272.0">
+                           <children>
+                              <Label text="2020년" />
+                              <TextField fx:id="start_month_spend" prefHeight="29.0" prefWidth="39.0" />
+                              <Label text="월" />
+                              <TextField fx:id="start_date_spend" prefHeight="29.0" prefWidth="41.0" />
+                              <Label text="일" />
+                              <CheckBox fx:id="today_check_spend" mnemonicParsing="false" prefHeight="21.0" prefWidth="93.0" text="오늘부터" />
+                           </children>
+                        </HBox>
+                        <ChoiceBox fx:id="spend_date" prefHeight="29.0" prefWidth="260.0" />
+                        <ChoiceBox fx:id="spend_category" prefHeight="29.0" prefWidth="258.0" />
+                        <TextField fx:id="spend_money" />
+                        <TextField fx:id="spend_title" />
+                        <TextField fx:id="how_long_spend" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Button fx:id="income_Button" layoutX="340.0" layoutY="172.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="수입" />
+      <Button fx:id="spend_Button" layoutX="626.0" layoutY="172.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="지출" />
+      <Label layoutX="241.0" layoutY="520.0" text="기간은 정수로 입력해 주세요." />
+      <Label layoutX="704.0" layoutY="520.0" text="기간은 정수로 입력해주세요." />
+   </children>
+</AnchorPane>
