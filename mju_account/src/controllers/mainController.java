@@ -34,6 +34,7 @@ public class mainController implements Initializable
 	@FXML Button fixedButton;//고정수입 지출버튼
 	@FXML Button pattButton;//소비패턴 버튼
 	@FXML Button infoButton;//정보 버튼
+	@FXML Button logout;
 	
 	/*달력에 관한 것들*/
 	@FXML Button prev;
@@ -64,6 +65,7 @@ public class mainController implements Initializable
 		fixedButton.setOnAction(event->fixed());
 		pattButton.setOnAction(event->pattern());
 		infoButton.setOnAction(event->info());
+		logout.setOnAction(event->logout());
 		
 		prev.setOnAction(event->decrease_date());
 		next.setOnAction(event->increase_date());
@@ -81,6 +83,10 @@ public class mainController implements Initializable
 		System.out.println("현재 날짜:"+year+"년 "+month+"월");
 		calendarinit(this.year,this.month);
 		calendar_date_init(this.year, this.month);
+	}
+	public void  logout() 
+	{
+		
 	}
 	private void refreshAction() 
 	{
@@ -202,7 +208,7 @@ public class mainController implements Initializable
 	{
 		System.out.println("소비 패턴");
 		accountPopup = new popup("소비 패턴");
-		accountPopup.setLocation("/view/patternPopup.fxml");
+		accountPopup.setLocation("/view/ConsumptionPattern.fxml");
 		accountPopup.show();
 	}
 	public void info()

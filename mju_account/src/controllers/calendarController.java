@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import popupcontrollers.detailPopupController;
 import popupcontrollers.popup;
 
 public class calendarController 
@@ -31,6 +32,7 @@ public class calendarController
 	{
 		detailPopup = new popup("상세");
 		detailPopup.setLocation("../view/detailPopup.fxml");
+		((detailPopupController)detailPopup.getController()).setDate(year, month, date);
 		detailPopup.show();
 	}
 	public void setinex() throws SQLException

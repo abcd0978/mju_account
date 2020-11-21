@@ -5,9 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupcontrollers.detailPopupController">
    <children>
       <Label layoutX="235.0" layoutY="60.0" text="하루 수입지출 상세" />
+      <Label layoutX="34.0" layoutY="23.0" text="날짜: " />
+      <Label fx:id="year_Label" layoutX="89.0" layoutY="23.0" text="Label" />
+      <TableView fx:id="table" layoutX="43.0" layoutY="131.0" prefHeight="230.0" prefWidth="271.0">
+        <columns>
+          <TableColumn fx:id="Name" prefWidth="116.0" text="이름" />
+          <TableColumn fx:id="income" minWidth="0.0" prefWidth="78.0" text="수입" />
+            <TableColumn fx:id="expend" prefWidth="76.0" text="지출" />
+        </columns>
+      </TableView>
+      <Button fx:id="order_by_price" layoutX="331.0" layoutY="131.0" mnemonicParsing="false" text="가격순 정렬" />
+      <Button fx:id="order_by_alpha" layoutX="331.0" layoutY="179.0" mnemonicParsing="false" text="가나다순 정렬" />
+      <TextField fx:id="textfield" layoutX="331.0" layoutY="231.0" />
+      <Button fx:id="search" layoutX="525.0" layoutY="231.0" mnemonicParsing="false" text="검색" />
+      <Label fx:id="month_Label" layoutX="158.0" layoutY="23.0" text="Label" />
+      <Label fx:id="date_Label" layoutX="224.0" layoutY="23.0" text="Label" />
    </children>
 </AnchorPane>

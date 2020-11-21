@@ -44,12 +44,13 @@ public class fixedincomePopupController implements Initializable
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		income_date.setItems(FXCollections.observableArrayList("일주일", "한달","일년"));
-		income_date.setValue("하루");
+		income_date.setValue("일주일");
 		income_category.setItems(FXCollections.observableArrayList("용돈","일당","알바","월급","기타"));
 		income_category.setValue("용돈");
 		spend_date.setItems(FXCollections.observableArrayList("일주일", "한달","일년"));
+		spend_date.setValue("일주일");
 		spend_date.setValue("하루");
-		spend_category.setItems(FXCollections.observableArrayList("식비","교통","문화생활","마트/편의점","교육","페션/미용","기타"));
+		spend_category.setItems(FXCollections.observableArrayList("식비","교통","문화생활","마트/편의점","교육","페션/미용","유흥","기타"));
 		spend_category.setValue("식비");
 		today_check_income.setOnAction(event->check1());
 		today_check_spend.setOnAction(event->check2());
@@ -82,8 +83,8 @@ public class fixedincomePopupController implements Initializable
 	}
 	public void check2()
 	{
-		start_date_spend.setText(Integer.toString(this.month));
-		start_month_spend.setText(Integer.toString(this.date));
+		start_date_spend.setText(Integer.toString(this.date));
+		start_month_spend.setText(Integer.toString(this.month));
 	}
 	//고정수입 기록
 	public void income_ButtonPressed() throws SQLException 

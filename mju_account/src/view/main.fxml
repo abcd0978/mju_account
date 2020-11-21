@@ -68,5 +68,6 @@
       <Button fx:id="pattButton" layoutX="1002.0" layoutY="307.0" mnemonicParsing="false" text="spending patterns" />
       <Button fx:id="infoButton" layoutX="1194.0" layoutY="307.0" mnemonicParsing="false" text="infos" />
       <Button fx:id="refresh" layoutX="1002.0" layoutY="825.0" mnemonicParsing="false" text="refresh" />
+      <Button fx:id="logout" layoutX="1126.0" layoutY="825.0" mnemonicParsing="false" text="logout" />
    </children>
 </AnchorPane>
