@@ -49,17 +49,17 @@ public class QuickSort {
 				array[end]=tmp;
 				start++;
 				end--;
-			} 
+			}
 		} 
 	return start; 
 	} 
 	public Account[] quickSort_S(Account[] array,int start, int end) 
 	{ 
-		int p = partition(array, start, end); 
+		int p = partition_S(array, start, end); 
 		if(start<p-1)
-			quickSort(array,start,p-1); 
+			quickSort_S(array,start,p-1); 
 		if(p<end) 
-			quickSort(array,p,end); 
+			quickSort_S(array,p,end); 
 		return array; 
 	}
 }
