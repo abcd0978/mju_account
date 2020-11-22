@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,18 +8,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.signupController">
    <children>
-      <Button fx:id="signup" layoutX="142.0" layoutY="672.0" mnemonicParsing="false" text="회원가입" />
-      <Button fx:id="goback" layoutX="341.0" layoutY="672.0" mnemonicParsing="false" text="메인으로 돌아가기" />
-      <PasswordField fx:id="pass" layoutX="138.0" layoutY="444.0" prefHeight="9.0" prefWidth="172.0" />
-      <TextField fx:id="id" layoutX="142.0" layoutY="234.0" />
-      <TextField fx:id="account" layoutX="142.0" layoutY="355.0" />
-      <TextField fx:id="name" layoutX="434.0" layoutY="234.0" />
-      <Label layoutX="157.0" layoutY="191.0" text="id" />
-      <Label layoutX="434.0" layoutY="191.0" text="name" />
-      <Label layoutX="145.0" layoutY="319.0" text="account" />
-      <PasswordField fx:id="pass_con" layoutX="142.0" layoutY="536.0" prefHeight="9.0" prefWidth="172.0" />
-      <Label layoutX="145.0" layoutY="416.0" text="password" />
-      <Label layoutX="145.0" layoutY="506.0" text="password confirm" />
-      <Button fx:id="dup" layoutX="146.0" layoutY="274.0" mnemonicParsing="false" text="중복확인" />
+      <ImageView fitHeight="900.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../image/registerBG.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="id" layoutX="400.0" layoutY="330.0" />
+      <Button fx:id="dup" layoutX="446.0" layoutY="290.0" mnemonicParsing="false" text="중복확인" />
+      <PasswordField fx:id="pass" layoutX="400.0" layoutY="426.0" prefHeight="9.0" prefWidth="172.0" />
+      <PasswordField fx:id="pass_con" layoutX="400.0" layoutY="525.0" prefHeight="9.0" prefWidth="172.0" />
+      <TextField fx:id="name" layoutX="912.0" layoutY="315.0" />
+      <TextField fx:id="account" layoutX="912.0" layoutY="411.0" />
+    
+      <Button fx:id="signup" layoutX="912.0" layoutY="524.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" text="회원가입" />
+      <Button fx:id="goback" layoutX="912.0" layoutY="579.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="172.0" text="메인으로 돌아가기" />
    </children>
 </AnchorPane>

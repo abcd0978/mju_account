@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -9,14 +10,14 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupcontrollers.ConsumptionPatternController">
    <children>
-      <Pane layoutY="-6.0" prefHeight="700.0" prefWidth="1200.0">
+      <Pane layoutY="0" prefHeight="606.0" prefWidth="1097.0">
          <children>
-            <Label layoutX="84.0" layoutY="66.0" text="지난 세 달 소비량">
-               <font>
-                  <Font size="50.0" />
-               </font>
-            </Label>
-            <BarChart fx:id="barChart" layoutX="47.0" layoutY="163.0" prefHeight="488.0" prefWidth="421.0">
+         <ImageView fitHeight="606.0" fitWidth="1097.0">
+               <image>
+                  <Image url="@../image/consumptionBG.png" />
+               </image>
+            </ImageView>
+            <BarChart fx:id="barChart" layoutX="95.0" layoutY="153.0" prefHeight="375.0" prefWidth="382.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -24,9 +25,10 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <PieChart fx:id="piechart" layoutX="650.0" layoutY="126.0" prefHeight="348.0" prefWidth="440.0" />
-            <ChoiceBox fx:id="combo" layoutX="940.0" layoutY="82.0" prefWidth="150.0" />
-            <Button fx:id="see" layoutX="787.0" layoutY="82.0" mnemonicParsing="false" text="보기" />
+            <PieChart fx:id="piechart" layoutX="503.0" layoutY="133.0" prefHeight="390.0" prefWidth="498.0" />
+            <ChoiceBox fx:id="combo" layoutX="851.0" layoutY="89.0" prefWidth="150.0" />
+            <Button fx:id="see" layoutX="655.0" layoutY="89.0" mnemonicParsing="false" text="보기" />
+           
          </children></Pane>
    </children>
 </AnchorPane>

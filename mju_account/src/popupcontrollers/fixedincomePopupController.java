@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class fixedincomePopupController implements Initializable 
@@ -26,6 +27,7 @@ public class fixedincomePopupController implements Initializable
 	@FXML TextField start_month_income;
 	@FXML TextField start_date_income;
 	@FXML CheckBox today_check_income;
+	@FXML Label saved_la_in;
 	
 	@FXML ChoiceBox spend_date;
 	@FXML ChoiceBox spend_category;
@@ -36,6 +38,8 @@ public class fixedincomePopupController implements Initializable
 	@FXML TextField start_month_spend;
 	@FXML TextField start_date_spend;
 	@FXML CheckBox today_check_spend;
+	@FXML Label saved_la_ex;
+	
 	
 	private int year,month,date;
 	private user_account ua;
@@ -96,6 +100,7 @@ public class fixedincomePopupController implements Initializable
 		int  how_long = Integer.parseInt(this.how_long_income.getText());
 		ua.setFixedIncome(money, title, category,this.year,Integer.parseInt(start_month_income.getText()),Integer.parseInt(start_date_income.getText()),dateIndex,how_long);
 		//매개변수로 수입,이름,카테고리,연웡일,간격선택,기간선택이 들어간다.
+		saved_la_in.setText("저장됨");
 	}
 	//고정 지출 기록
 	public void spend_ButtonPressed() throws SQLException 
@@ -107,5 +112,6 @@ public class fixedincomePopupController implements Initializable
 		int how_long = Integer.parseInt(how_long_spend.getText());
 		ua.setFixedExpenditure(money, title, category,this.year,Integer.parseInt(start_month_spend.getText()),Integer.parseInt(start_date_spend.getText()) ,dateIndex,how_long);
 		//매개변수로 수입,이름,카테고리,연웡일,간격선택,기간선택이 들어간다.
+		saved_la_ex.setText("저장됨");
 	}
 }

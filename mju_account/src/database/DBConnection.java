@@ -6,26 +6,30 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 public class DBConnection 
 {
-	private final static String JDCB_DRIVER = "com.mysql.cj.jdbc.Driver";
-	private final static String DB_URL = "jdbc:mysql://14.38.252.76/account?characterEncoding=UTF-8&serverTimezone=UTC";//mysql�� �ּ�
-	private final static String USER_NAME = "kohd";//����� ���̵� ���
+	private final static String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+	private final static String DB_URL = "jdbc:mysql://34.64.123.148:3306/account?characterEncoding=UTF-8&serverTimezone=UTC";//mysql占쏙옙 占쌍쇽옙
+	private final static String USER_NAME = "kmg";
 	private final static String PASSWORD = "0001";
 	private static Connection con = null;
-	private DBConnection() {}//���ٸ��ϰ� ���Ƴ���
+	protected static Statement st = null;
+	protected static ResultSet rs;
+	private DBConnection() {}
 	public static Connection getInstance()
 	{
 		if(con==null)
 		{
 			try 
 			{
-				Class.forName(JDCB_DRIVER);//critical 
+				Class.forName(JDBC_DRIVER);//critical 
 				con = DriverManager.getConnection(DB_URL,USER_NAME,PASSWORD);
-				System.out.println("///////DB객체 생성됨//////");
+				st = con.createStatement();
+				System.out.println("///////////////DB Connected/////////////");
 			}
+			
 			catch(Exception e)
 			{
 				e.printStackTrace();
-				System.out.println("�������");
+				System.out.println("DB Connect Error");
 			}
 		}
 		return con;

@@ -6,10 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="Anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="139.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.calendarController">
+<AnchorPane fx:id="Anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="139.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.calendarController">
    <children>
-      <Label fx:id="income" layoutX="16.0" layoutY="56.0" text="income" textFill="#08ff00" />
-      <Label fx:id="date_Cal" layoutX="14.0" layoutY="20.0" text="Label" />
-      <Label fx:id="expend" layoutX="14.0" layoutY="86.0" text="spending" textFill="RED" />
+      <Label fx:id="income" layoutX="14.0" layoutY="49.0" text="income" textFill="#08ff00" />
+      <Label fx:id="date_Cal" layoutX="35.0" layoutY="20.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="expend" layoutX="14.0" layoutY="69.0" text="spending" textFill="RED" />
    </children>
 </AnchorPane>

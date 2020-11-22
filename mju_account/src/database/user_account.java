@@ -195,10 +195,17 @@ public class user_account {
 	{
 		String current = year+"-"+month+"-"+date;
 		String query = "INSERT INTO account (id,expenditure,name,category,date) VALUE(?,?,?,?,?)";
-		String setQuery = "SET @date_temp = '"+current+"';";//현재날짜 기준으로 하여
-		String weekIncrease =  "SET @date_temp = DATE_ADD(@date_temp,INTERVAL 1 WEEK);";//날짜 늘리기
-		String monthIncrease =  "SET @date_temp = DATE_ADD(@date_temp,INTERVAL 1 MONTH);";//날짜 늘리기
-		String yearIncrease =  "SET @date_temp = DATE_ADD(@date_temp,INTERVAL 1 YEAR);";//날짜 늘리기
+		String weekIncrease =  "SELECT DATE_ADD( ? ,INTERVAL 1 WEEK);";//날짜 늘리기
+		String monthIncrease =  "SELECT DATE_ADD( ? ,INTERVAL 1 MONTH);";//날짜 늘리기
+		String yearIncrease =  "SELECT DATE_ADD( ? ,INTERVAL 1 YEAR);";//날짜 늘리기
+		ps = con.prepareStatement(query);//insert 구문
+		ps.setInt(1, ui.getId());
+		ps.setInt(2, expend);
+		ps.setString(3, title);
+		ps.setString(4, category);
+		ps.setString(5, current);
+		ps.execute();//먼저 현재 날짜로 insert함
+		
 		if(interval==0)//일주일
 		{
 			for(int i=0;i<how_long;i++)

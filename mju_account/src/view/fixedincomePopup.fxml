@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.embed.swing.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,7 +9,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupcontrollers.fixedincomePopupController">
    <children>
-      <Label layoutX="472.0" layoutY="57.0" text="고정 수입 및 지출 변경" />
+      <ImageView fitHeight="606.0" fitWidth="1097.0">
+         <image>
+            <Image url="@../image/fixedincomBG.png" />
+         </image>
+      </ImageView>
       <HBox layoutX="168.0" layoutY="313.0" prefHeight="165.0" prefWidth="795.0" spacing="170.0">
          <children>
             <HBox prefHeight="262.0" prefWidth="303.0">
@@ -79,9 +84,11 @@
             </HBox>
          </children>
       </HBox>
-      <Button fx:id="income_Button" layoutX="340.0" layoutY="172.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="수입" />
-      <Button fx:id="spend_Button" layoutX="626.0" layoutY="172.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="지출" />
+      <Button fx:id="income_Button" layoutX="341.0" layoutY="220.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="수입" />
+      <Button fx:id="spend_Button" layoutX="627.0" layoutY="220.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="132.0" text="지출" />
       <Label layoutX="241.0" layoutY="520.0" text="기간은 정수로 입력해 주세요." />
       <Label layoutX="704.0" layoutY="520.0" text="기간은 정수로 입력해주세요." />
+      <Label fx:id="saved_la_ex" layoutX="802.0" layoutY="249.0" />
+      <Label fx:id="saved_la_in" layoutX="176.0" layoutY="249.0" />
    </children>
 </AnchorPane>

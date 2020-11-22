@@ -14,10 +14,13 @@ import database.user_info;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import lib.CalendarInfo;
 
 public class mainController implements Initializable 
@@ -32,7 +35,7 @@ public class mainController implements Initializable
 	/*팝업들*/
 	@FXML Button accountButton;//오늘의 수입,지출버튼
 	@FXML Button fixedButton;//고정수입 지출버튼
-	@FXML Button pattButton;//소비패턴 버튼
+	@FXML Button patternButton;//소비패턴 버튼
 	@FXML Button infoButton;//정보 버튼
 	@FXML Button logout;
 	
@@ -63,7 +66,7 @@ public class mainController implements Initializable
 		/*팝업들*/
 		accountButton.setOnAction(event->account());
 		fixedButton.setOnAction(event->fixed());
-		pattButton.setOnAction(event->pattern());
+		patternButton.setOnAction(event->pattern());
 		infoButton.setOnAction(event->info());
 		logout.setOnAction(event->logout());
 		
@@ -84,10 +87,19 @@ public class mainController implements Initializable
 		calendarinit(this.year,this.month);
 		calendar_date_init(this.year, this.month);
 	}
+	
 	public void  logout() 
 	{
-		
+		try {
+			Parent login = FXMLLoader.load(getClass().getResource("../view/root.fxml"));
+			Scene scene = new Scene(login);
+			Stage primaryStage = (Stage)logout.getScene().getWindow();
+			primaryStage.setScene(scene);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
+	
 	private void refreshAction() 
 	{
 		calendarinit(this._year,this._month);

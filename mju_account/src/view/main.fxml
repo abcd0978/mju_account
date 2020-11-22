@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,21 +9,32 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainController">
    <children>
-      <Label layoutX="912.0" layoutY="52.0" prefHeight="34.0" prefWidth="92.0" text="Hello" />
-      <Label fx:id="name" layoutX="952.0" layoutY="60.0" prefHeight="19.0" prefWidth="153.0" />
-      <Button fx:id="accountButton" layoutX="1228.0" layoutY="256.0" mnemonicParsing="false" text="account" />
-      <GridPane fx:id="CalendarGrid" gridLinesVisible="true" layoutY="110.0" prefHeight="790.0" prefWidth="923.0">
+      <ImageView fitHeight="900.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../image/mainBG.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1124.0" layoutY="192.0" prefHeight="34.0" prefWidth="92.0" text="의 가계부">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label fx:id="name" layoutX="982.0" layoutY="181.0" prefHeight="42.0" prefWidth="142.0">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Button fx:id="accountButton" layoutX="1272.0" layoutY="226.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" text="소득/지출 입력" />
+      <GridPane fx:id="CalendarGrid" gridLinesVisible="true" layoutX="206.0" layoutY="226.0" prefHeight="496.0" prefWidth="642.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="5.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,44 +43,88 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="sun" />
-            <Label text="mon" GridPane.columnIndex="1" />
-            <Label text="tue" GridPane.columnIndex="2" />
-            <Label text="wed" GridPane.columnIndex="3" />
-            <Label text="tur" GridPane.columnIndex="4" />
-            <Label text="fri" GridPane.columnIndex="5" />
-            <Label text="sat" GridPane.columnIndex="6" />
+            <Label prefHeight="19.0" prefWidth="100.0" text="  SUN" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="19.0" prefWidth="99.0" text=" MON" GridPane.columnIndex="1">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="39.0" prefWidth="101.0" text=" TUE" GridPane.columnIndex="2">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="19.0" prefWidth="98.0" text=" WED" GridPane.columnIndex="3">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="19.0" prefWidth="99.0" text=" TUR" GridPane.columnIndex="4">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="19.0" prefWidth="101.0" text="  FRI" GridPane.columnIndex="5">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label prefHeight="39.0" prefWidth="99.0" text="  SAT" textFill="BLUE" GridPane.columnIndex="6">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
          </children>
       </GridPane>
-      <HBox layoutX="6.0" layoutY="79.0" prefHeight="34.0" prefWidth="236.0" spacing="50.0">
+      <HBox layoutX="6.0" layoutY="79.0" prefHeight="34.0" prefWidth="236.0" spacing="50.0" />
+      <HBox layoutX="358.0" layoutY="167.0" prefHeight="42.0" prefWidth="374.0" spacing="30.0">
          <children>
-            <Button fx:id="prev" mnemonicParsing="false" text="prev" />
-            <Button fx:id="next" mnemonicParsing="false" text="next" />
+            <Label fx:id="year_cal" prefHeight="42.0" prefWidth="103.0" text="Label">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label text="년">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="month_cal" prefHeight="42.0" prefWidth="71.0" text="Label">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label prefHeight="42.0" prefWidth="68.0" text="월">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="348.0" layoutY="91.0" prefHeight="19.0" prefWidth="322.0" spacing="30.0">
+      <HBox layoutX="982.0" layoutY="270.0" prefHeight="50.0" prefWidth="270.0">
          <children>
-            <Label fx:id="year_cal" text="Label" />
-            <Label text="년" />
-            <Label fx:id="month_cal" text="Label" />
-            <Label text="월" />
+            <Label prefHeight="28.0" prefWidth="90.0" text="오늘은">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="year_cur" prefHeight="28.0" prefWidth="79.0" text="Label">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label text="년 ">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
          </children>
       </HBox>
-      <HBox layoutX="912.0" layoutY="33.0" prefHeight="19.0" prefWidth="260.0">
+      <Button fx:id="fixedButton" layoutX="1272.0" layoutY="159.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" text="고정 수입/지출 변경" />
+      <Button fx:id="patternButton" layoutX="1272.0" layoutY="295.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" text="소비 패턴 분석" />
+      <Button fx:id="infoButton" layoutX="1272.0" layoutY="363.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" text="기타 금융 정보" />
+      <Button fx:id="refresh" layoutX="1272.0" layoutY="435.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" text="새로 고침" />
+      <Button fx:id="prev" layoutX="234.0" layoutY="173.0" mnemonicParsing="false" text="prev" />
+      <Button fx:id="next" layoutX="774.0" layoutY="173.0" mnemonicParsing="false" text="next" />
+      <HBox layoutX="982.0" layoutY="320.0" prefHeight="115.0" prefWidth="270.0">
          <children>
-            <Label text="current: " />
-            <Label fx:id="year_cur" text="Label" />
-            <Label text="년 " />
             <Label fx:id="month_cur" text="Label" />
             <Label text="월 " />
             <Label fx:id="date_cur" text="Label" />
             <Label text="일" />
          </children>
       </HBox>
-      <Button fx:id="fixedButton" layoutX="1002.0" layoutY="256.0" mnemonicParsing="false" text="fixed income and expend" />
-      <Button fx:id="pattButton" layoutX="1002.0" layoutY="307.0" mnemonicParsing="false" text="spending patterns" />
-      <Button fx:id="infoButton" layoutX="1194.0" layoutY="307.0" mnemonicParsing="false" text="infos" />
-      <Button fx:id="refresh" layoutX="1002.0" layoutY="825.0" mnemonicParsing="false" text="refresh" />
-      <Button fx:id="logout" layoutX="1126.0" layoutY="825.0" mnemonicParsing="false" text="logout" />
+      <Button fx:id="logout" layoutX="1397.0" layoutY="843.0" mnemonicParsing="false" text="로그아웃" />
    </children>
 </AnchorPane>
